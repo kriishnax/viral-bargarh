@@ -1,0 +1,2 @@
+import {NextResponse} from 'next/server'; import {prisma} from '@/lib/prisma'; import {requireAdmin} from '@/lib/auth';
+export async function POST(req:Request){try{await requireAdmin();const b=await req.json();return NextResponse.json(await prisma.liveUpdate.create({data:{textEn:b.textEn,textOr:b.textOr}}),{status:201})}catch(e:any){return NextResponse.json({error:e.message||'Could not create'},{status:e.message==='UNAUTHORIZED'?401:400})}}

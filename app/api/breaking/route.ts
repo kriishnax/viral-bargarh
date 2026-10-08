@@ -1,0 +1,1 @@
+import {NextResponse} from 'next/server'; import {prisma} from '@/lib/prisma'; export async function GET(){try{return NextResponse.json({items:await prisma.liveUpdate.findMany({where:{isActive:true},orderBy:{createdAt:'desc'},take:30})})}catch{return NextResponse.json({items:[]})}}

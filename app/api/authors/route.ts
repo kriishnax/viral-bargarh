@@ -1,0 +1,3 @@
+import {NextResponse} from 'next/server'; import {prisma} from '@/lib/prisma'; import {requireAdmin} from '@/lib/auth';
+export async function GET(){try{return NextResponse.json({authors:await prisma.author.findMany({orderBy:{name:'asc'}})})}catch{return NextResponse.json({authors:[]})}}
+export async function POST(req:Request){try{await requireAdmin();const b=await req.json();return NextResponse.json(await prisma.author.create({data:{name:b.name,bio:b.bio||null,photoUrl:b.photoUrl||null}}),{status:201})}catch(e:any){return NextResponse.json({error:e.message||'Could not create'},{status:e.message==='UNAUTHORIZED'?401:400})}}

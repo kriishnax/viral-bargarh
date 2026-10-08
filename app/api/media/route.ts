@@ -1,0 +1,3 @@
+import {NextResponse} from 'next/server'; import {prisma} from '@/lib/prisma'; import {requireAdmin} from '@/lib/auth';
+export async function GET(){try{return NextResponse.json({media:await prisma.media.findMany({orderBy:{createdAt:'desc'},take:100})})}catch{return NextResponse.json({media:[]})}}
+export async function POST(req:Request){try{const s=await requireAdmin();const b=await req.json();return NextResponse.json(await prisma.media.create({data:{name:b.name,url:b.url,alt:b.alt||null,type:'IMAGE',uploadedById:s.sub}}),{status:201})}catch(e:any){return NextResponse.json({error:e.message||'Could not create'},{status:e.message==='UNAUTHORIZED'?401:400})}}

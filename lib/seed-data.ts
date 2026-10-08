@@ -1,0 +1,4 @@
+export const demoArticles = [
+  { id: 'demo-1', slug: 'welcome-to-viral-bargarh', titleEn: 'Viral Bargarh: fast, local and verified news from the ground', titleOr: 'ଭାଇରାଲ ବରଗଡ଼: ଗ୍ରାଉଣ୍ଡରୁ ଦ୍ରୁତ, ସ୍ଥାନୀୟ ଓ ସତ୍ୟାପିତ ଖବର', excerptEn: 'Your new digital home for Bargarh and Odisha news.', excerptOr: 'ବରଗଡ଼ ଓ ଓଡ଼ିଶା ଖବର ପାଇଁ ଆପଣଙ୍କ ନୂଆ ଡିଜିଟାଲ ମଞ୍ଚ।', category: { nameEn: 'Bargarh', nameOr: 'ବରଗଡ଼', slug: 'bargarh' }, featuredImage: '/brand/logo.jpg', publishedAt: new Date() },
+  { id: 'demo-2', slug: 'odisha-news-demo', titleEn: 'Odisha updates, public voices and stories that matter', titleOr: 'ଓଡ଼ିଶାର ଅପଡେଟ୍, ଜନସ୍ୱର ଓ ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ ଖବର', excerptEn: 'A clean demo story for the new newsroom.', excerptOr: 'ନୂଆ ନ୍ୟୁଜରୁମ ପାଇଁ ଏକ ଡେମୋ ଷ୍ଟୋରି।', category: { nameEn: 'Odisha', nameOr: 'ଓଡ଼ିଶା', slug: 'odisha' }, featuredImage: '/brand/logo.jpg', publishedAt: new Date(Date.now() - 3600000) },
+];

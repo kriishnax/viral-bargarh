@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: viral-bargarh-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: viral_bargarh
+    ports:
+      - "5432:5432"
+    volumes:
+      - viral_bargarh_pgdata:/var/lib/postgresql/data
+
+volumes:
+  viral_bargarh_pgdata:
